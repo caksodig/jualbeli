@@ -28,7 +28,7 @@ db.connect(error => {
     }
 })
 
-// end-point akses data siswa
+// end-point akses data pelanggan
 app.get("/pembeli", (req, res) => {
     // create sql query
     let sql = "select * from pelanggan"
@@ -43,14 +43,14 @@ app.get("/pembeli", (req, res) => {
         } else {
             response = {
                 count: result.length, // jumlah data
-                siswa: result // isi data
+                pelanggan: result // isi data
             }
         }
         res.json(response) // send response
     })
 })
 
-// end-point akses data siswa berdasarkan id_siswa tertentu
+// end-point akses data pelanggan berdasarkan id_pelanggan tertentu
 app.get("/pembeli/:id", (req, res) => {
     let data = {
         id_siswa: req.params.id
@@ -75,7 +75,7 @@ app.get("/pembeli/:id", (req, res) => {
     })
 })
 
-// end-point menyimpan data siswa
+// end-point menyimpan data pelanggan
 app.post("/pembeli", (req, res) => {
 
     // prepare data
@@ -103,7 +103,7 @@ app.post("/pembeli", (req, res) => {
     })
 })
 
-// end-point mengubah data siswa
+// end-point mengubah data pelanggan
 app.put("/pembeli", (req, res) => {
 
     // prepare data
@@ -139,7 +139,7 @@ app.put("/pembeli", (req, res) => {
     })
 })
 
-// end-point menghapus data siswa berdasarkan id_siswa
+// end-point menghapus data pelanggan berdasarkan id_pelanggan
 app.delete("/pembeli/:id", (req, res) => {
     // prepare data
     let data = {
