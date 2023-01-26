@@ -29,7 +29,7 @@ db.connect(error => {
 })
 
 // end-point akses data pelanggan
-app.get("/pembeli", (req, res) => {
+app.get("/pelanggan", (req, res) => {
     // create sql query
     let sql = "select * from pelanggan"
 
@@ -51,7 +51,7 @@ app.get("/pembeli", (req, res) => {
 })
 
 // end-point akses data pelanggan berdasarkan id_pelanggan tertentu
-app.get("/pembeli/:id", (req, res) => {
+app.get("/pelanggan/:id", (req, res) => {
     let data = {
         id_pelanggan: req.params.id
     }
@@ -76,7 +76,7 @@ app.get("/pembeli/:id", (req, res) => {
 })
 
 // end-point menyimpan data pelanggan
-app.post("/pembeli", (req, res) => {
+app.post("/pelanggan", (req, res) => {
 
     // prepare data
     let data = {
@@ -104,7 +104,7 @@ app.post("/pembeli", (req, res) => {
 })
 
 // end-point mengubah data pelanggan
-app.put("/pembeli", (req, res) => {
+app.put("/pelanggan", (req, res) => {
 
     // prepare data
     let data = [
@@ -140,7 +140,7 @@ app.put("/pembeli", (req, res) => {
 })
 
 // end-point menghapus data pelanggan berdasarkan id_pelanggan
-app.delete("/pembeli/:id", (req, res) => {
+app.delete("/pelanggan/:id", (req, res) => {
     // prepare data
     let data = {
         id_pelanggan: req.params.id
