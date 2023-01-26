@@ -53,7 +53,7 @@ app.get("/pembeli", (req, res) => {
 // end-point akses data pelanggan berdasarkan id_pelanggan tertentu
 app.get("/pembeli/:id", (req, res) => {
     let data = {
-        id_siswa: req.params.id
+        id_pelanggan: req.params.id
     }
     // create sql query
     let sql = "select * from pelanggan where ?"
